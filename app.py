@@ -11,7 +11,7 @@ st.title("🎓 Student Performance Prediction App")
 st.write("Predict student exam score based on study habits, lifestyle, and attendance.")
 
 # --- LOAD DATA ---
-data = pd.read_csv("dataset.csv")
+data = pd.read_csv("student_habits_performance.csv")
 
 # Fill missing parental_education_level with mode
 data['parental_education_level'] = data['parental_education_level'].fillna(data['parental_education_level'].mode()[0])
@@ -79,3 +79,4 @@ if st.button("Predict Exam Score"):
     final_score = max(0, min(100, prediction[0]))  # Clip to realistic range
 
     st.success(f"Predicted Final Score: {final_score:.2f}")
+
